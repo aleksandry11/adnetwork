@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="auth">
+        <h1>Регистрация</h1>
+        <form [formGroup]="form">
+          <p *ngIf="message">{{message}}</p>
+          <md-input-container>
+            <input mdInput placeholder="Username" required type="text" (keyup)="getUsername($event)" formControlName="name">
+          </md-input-container>
+          <br>
+          <md-input-container>
+            <input mdInput placeholder="Password" required type="password" (keyup)="getPassword($event)" formControlName="pass">
+          </md-input-container>
+          <br>
+          <button md-button (click)="submitReg($event)">Sign up</button>
+          <button md-button (click)="logIn($event)">Login</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

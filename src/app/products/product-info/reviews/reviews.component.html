@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Отзывы: </h1>
+      <div class="row">
+        <div class="reviews">
+          <div *ngFor="let review of reviews.slice().reverse()" class="col-md-12 review-item">
+            Created by: <span class="username">{{review.created_by.username}}</span>, at: <span class="date">{{review.created_at}}</span>
+            <p class="review">{{review.text}}</p>
+            <span class="rate">Оценка: <i *ngFor="let i of getArray(review.rate)" class="fa fa-star"></i> {{review.rate}} из 5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h1>Оставить отзыв:</h1>
+      <div class="review-form">
+        <form>
+          <textarea placeholder="Type your review" (keyup)="getReview($event)"></textarea>
+          <div class="star-rating">
+            <div class="star-rating__wrap">
+              <span>Ваша оценка:</span>
+              <input class="star-rating__input" id="star-rating-5" type="radio" name="rating" value="5">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-5" title="5 out of 5 stars" (click)="getRate($event)"></label>
+              <input class="star-rating__input" id="star-rating-4" type="radio" name="rating" value="4">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-4" title="4 out of 5 stars" (click)="getRate($event)"></label>
+              <input class="star-rating__input" id="star-rating-3" type="radio" name="rating" value="3">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-3" title="3 out of 5 stars" (click)="getRate($event)"></label>
+              <input class="star-rating__input" id="star-rating-2" type="radio" name="rating" value="2">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-2" title="2 out of 5 stars" (click)="getRate($event)"></label>
+              <input class="star-rating__input" id="star-rating-1" type="radio" name="rating" value="1">
+              <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-1" title="1 out of 5 stars" (click)="getRate($event)"></label>
+            </div>
+          </div>
+          <button md-button (click)="submitReview($event)">Отправить</button>
+          <p>{{message}}</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

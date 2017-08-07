@@ -1,0 +1,85 @@
+.review-item {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f1f1f1;
+    color: #8a8989;
+}
+.review-item span.username {
+    color: #3f51b5;
+    font-weight: bold;
+}
+.review-item span.date {
+    font-style: italic;
+    font-size: 14px;
+}
+.review-item p.review {
+    color: #3f51b5;
+    margin: 10px 0;
+}
+.review-item span.rate i {
+    color: #FFB300;
+    margin-right: 3px;
+}
+
+.review-form textarea {
+    width: 100%!important;
+    padding: 10px;
+    height: 120px!important;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+    color: #3f51b5;
+    border: 1px solid #e8e6e6;
+    margin-bottom: 10px;
+}
+.review-form button {
+    background-color: #b9c0ea;
+    padding: 5px 30px;
+    margin: 10px 0;
+    color: #3f51b5;
+    transition: 0.3s ease;
+}
+.review-form button:hover {
+    background-color: #96a2ec;
+}
+.review-form p {
+    padding: 5px 0;
+    color: #ca0909;
+}
+
+
+.star-rating{
+    font-size: 0;
+}
+.star-rating__wrap{
+    display: inline-block;
+    font-size: 14px;
+}
+.star-rating__wrap span {
+    margin-right: 10px;
+}
+.star-rating__wrap:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.star-rating__ico{
+    margin-top: 4px;
+    float: right;
+    padding-left: 2px;
+    cursor: pointer;
+    color: #FFB300;
+    font-size: 20px;
+}
+.star-rating__ico:last-child{
+    padding-left: 0;
+}
+.star-rating__input{
+    display: none;
+}
+.star-rating__ico:hover:before,
+.star-rating__ico:hover ~ .star-rating__ico:before,
+.star-rating__input:checked ~ .star-rating__ico:before
+{
+    content: "\f005";
+}

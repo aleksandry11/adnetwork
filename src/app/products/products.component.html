@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="products">
+      <h1>Каталог товаров</h1>
+      <div *ngFor="let product of products"
+           class="col-lg-3 col-md-3 col-sm-2 col-xs-1 product-item"
+           routerLink="/model"
+           routerLinkActive="active"
+           (click)="onClick(product.id)">
+        <div class="product-item__img">
+          <img src="{{imageLink + product.img}}" alt="{{product.title}}">
+        </div>
+        <p>{{product.title}}</p>
+        <span class="details">Details</span>
+      </div>
+    </div>
+  </div>
+</div>
+
