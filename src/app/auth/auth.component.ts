@@ -2,7 +2,6 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ProductService } from '../products/product.service';
 import {FormGroup, FormBuilder, FormControl} from '@angular/forms';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -18,7 +17,7 @@ export class AuthComponent implements OnInit, OnChanges {
     password: ''
   };
 
-  constructor(private http: HttpClient, private productService: ProductService, private fb: FormBuilder, private router: Router) {
+  constructor(private http: HttpClient, private productService: ProductService, private fb: FormBuilder) {
       this.createForm();
   }
 
@@ -72,7 +71,6 @@ export class AuthComponent implements OnInit, OnChanges {
               this.productService.token = data.token;
               this.message = 'Login success';
               setTimeout(() => this.message = '', 2000);
-              this.router.navigate(['/']);
           }
         });
   }
